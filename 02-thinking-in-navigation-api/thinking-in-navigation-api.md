@@ -83,7 +83,7 @@ boolean success = AutoSdkManager.getInstance().init(BaseApplication.this, autoSd
 
 <section>
     <p class="fragment">buildRouteRequest(Location)</p>
-    <p class="fragment">dirService.enqueueJob(RouteRequest, RouteListener)</p>
+    <p class="fragment">dirService.generateRoute(RouteRequest, RouteListener)</p>
     <p class="fragment">navService.startNavigation(Route)</p>
 </section>
 
@@ -204,7 +204,7 @@ Yes, it is cool. But so what?
 ### Continuation-Passing style
 
 ```java
-void calculateRoute(routeRequest, new RouteListener() {
+void generateRoute(routeRequest, new RouteListener() {
         void onRouteGenerated(route) {
             ...
             startNavigation(route, new NavStatusCallback() {
@@ -231,34 +231,55 @@ Rx will save you!
 
 
 
+Rx(Reactive extension) is a set of tools allowing imperative languages to operate on sequences of data regardless of whether the data is sync. or async.
+Rx is the implementation of reactive programming.
+
+
+
 ### Rx style
 
 ![RxAsync](img/rx-async.gif)
 
 
+
 <section>
-<p><span style="display: inline-block;" class="fragment highlight-blue">Observable.from</span>(location)</p>
-<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(buildRouteRequest())</p>
+<p><span style="display: inline-block;" class="fragment highlight-blue">Observable.from</span>(loc)</p>
+<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(buildRouteRequest(loc))</p>
 <p>.<span style="display: inline-block;" class="fragment highlight-blue">observeOn(Schedulers.computation())</span></p>
-<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(calculateRoute())</p>
-<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(startNavigation())</p>
+<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(dirS.generateRoute(routeRequest))</p>
+<p>.<span style="display: inline-block;" class="fragment highlight-blue">map</span>(navS.startNavigation(route))</p>
 ...
 </section>
+
+>Note: It's awesome but can we remove the operators?
+
+
+
+### Rx style
+
+<section>
+<br/>
+<br/>
+<br/>
+<p style="vertical-align:middle"><span style="display: inline-block;" class="fragment fade-out">dirS</span><span style="display: inline-block;" class="fragment fade-in">loc</span>.  generateRoute  (<span style="display: inline-block;" class="fragment fade-out">loc</span><span style="display: inline-block;" class="fragment fade-in">dirS</span> )</p>
+<p class="fragment fade-in-then-semi-out">Do we really care about the direction service?</p>
+<p class="fragment fade-up">loc.generateRoute()</p>
+</section>
+
 
 
 ```kotlin
 //Sequential style!!
 location.buildRouteRequest()
-        .getRoute() //asynchronous
+        .generateRoute() //asynchronous
         .startNavigation()
         ...
 ```
 
 ```kotlin
-fun suspend RouteRequest.getRoute(): Route...
+fun suspend RouteRequest.generateRoute(): Route...
 ```
 
->Note: It's awesome but can we remove the operators?
 
 
 You can refer [here](https://bitbucket.telenav.com/projects/AUT/repos/java-sdk-common/browse/java_sdk/tasdk-component/src/androidTest/java/com/telenav/arp/sdk/direction/DirectionStrategy.kt?at=refs%2Fheads%2FBlackPanther) to see the full API definitions.
