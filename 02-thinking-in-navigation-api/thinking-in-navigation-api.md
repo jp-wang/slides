@@ -15,7 +15,7 @@
 <section>
     <p class="fragment">buildRouteRequest(Location)</p>
     <p class="fragment">navKit.generateRoute(routeRequest)</p>
-    <p class="fragment">navKit.tartNavigation()</p>
+    <p class="fragment">navKit.startNavigation()</p>
 </section>
 
 >Note: NavKit style such as AutoNavi.
@@ -78,22 +78,7 @@ boolean success = AutoSdkManager.getInstance().init(BaseApplication.this, autoSd
 ```
 
 
-
-## Then comes up TaSDK Navigation API
-
-<section>
-    <p class="fragment">buildRouteRequest(Location)</p>
-    <p class="fragment">dirService.generateRoute(RouteRequest, RouteListener)</p>
-    <p class="fragment">navService.startNavigation(Route)</p>
-</section>
-
-
-
-Much more simple, but can we do more?
-
-![leonardo](img/leonardo.gif)
-
->Note: But it is still requiring a lot configs before we can actually use it. Can we simplify it including the Async Programming?
+We can definitely enhance it but let's firstly see something else...
 
 
 
@@ -133,8 +118,11 @@ b = fa(a) c = fb(b)...
 
 ![abc](img/abc.png)
 
->Note: We have two options to implement it.
 
+We have two options to implement it.
+
+
+## NavKit style
 
 ```
 startNavigation() = fa(a) {
@@ -154,9 +142,53 @@ startNavigation() = fa(a) {
 ```
 
 
+It is easy and powerful, but it's short of flexibility.
+What if we want to use `fc()` separately, or we don't need function `fd()`?
+
+
+## Then let's see TaSDK Navigation API
+
+<section>
+    <p class="fragment">buildRouteRequest(Location)</p>
+    <p class="fragment">dirService.generateRoute(RouteRequest, RouteListener)</p>
+    <p class="fragment">navService.startNavigation(Route)</p>
+    <p class="fragment">navService.attachAlertService(alertService)</p>
+    <p class="fragment">navService.attachAdasService(adasService)</p>
+    <p class="fragment">...</p>
+</section>
+
+
+It is bascially equal to:
+
 ```
 startNavigation() = ...fd(fc(fb(fa(a))))
 ```
+
+
+Much more simple, powerful and scalable, but...
+
+![leonardo](img/leonardo.gif)
+
+>Note: But it is still requiring a lot configs before we can actually use it. Can we simplify it including the Async Programming?
+
+
+Still too many initializations!!
+
+![cry](img/cry.gif)
+
+
+And so many API combinations!
+
+![no-word](img/no-word.gif)
+
+
+The API combinations and the timing to use them make things so fragility!
+
+```
+PositionService.start/stop x NavigationSession.start/stop = 4! 
+```
+
+But only one in those combinations can make it functioning properly.
 
 
 Ability | NavKit | TASDK
