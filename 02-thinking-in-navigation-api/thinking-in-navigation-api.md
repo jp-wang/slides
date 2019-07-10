@@ -119,7 +119,9 @@ b = fa(a) c = fb(b)...
 ![abc](img/abc.png)
 
 
-We have two options to implement it.
+
+How do we implement it?
+
 
 
 ## NavKit style
@@ -144,6 +146,7 @@ startNavigation() = fa(a) {
 
 It is easy and powerful, but it's short of flexibility.
 What if we want to use `fc()` separately, or we don't need function `fd()`?
+
 
 
 ## Then let's see TaSDK Navigation API
@@ -189,6 +192,15 @@ PositionService.start/stop x NavigationSession.start/stop = 4!
 ```
 
 But only one in those combinations can make it functioning properly.
+
+
+Below API is a huge scary monster! Think about how many unexpected behaviors if it is not called properly!
+```
+service.dispose()
+```
+
+![scared-cat](img/scared-cat.jpg)
+
 
 
 Ability | NavKit | TASDK
