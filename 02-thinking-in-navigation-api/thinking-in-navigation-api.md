@@ -202,6 +202,9 @@ service.dispose()
 ![scared-cat](img/scared-cat.jpg)
 
 
+In fact, almost 80% of the TASDK crashes are due to the inappropriate usage of API combinations!
+
+
 
 Ability | NavKit | TASDK
 ---|---|---
