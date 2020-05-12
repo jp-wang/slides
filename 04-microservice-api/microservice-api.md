@@ -75,14 +75,14 @@ comparable!
 
 ## SOAP
 
-1. Format
-1.1 SOAP XML Request
-1.2 XML Response
-2. Transport
-2.1 SOAP over MQ
-2.2 SOAP over HTTP
-3. Service Definition
-3.1 WSDL
+* Format
+   * SOAP XML Request
+   * XML Response
+* Transport
+   * SOAP over MQ
+   * SOAP over HTTP
+* Service Definition
+   * WSDL
 
 
 
@@ -105,36 +105,34 @@ for distributed hypermedia systems
 
 ## KEY ABSTRACTION - RESOURCE
 
-- A resource has an URI (Uniform Resource Identifier)
+* A resource has an URI (Uniform Resource Identifier)
+   * /media/tracks/1
+   * /media/tracks
 
-/media/tracks/1
-/media/tracks
-
-- A resource can have different representations
-
-XML
-HTML
-JSON
+* A resource can have different representations
+   * XML
+   * HTML
+   * JSON
 
 
 
 ## EXAMPLE
 
-Create a playlist - POST /media/playlists
-Delete a playlist - DELETE /media/playlists/1
-Get all playlists - GET /media/playlists
-Get one playlist - GET /media/playlists/1
+* Create a playlist - POST /media/playlists
+* Delete a playlist - DELETE /media/playlists/1
+* Get all playlists - GET /media/playlists
+* Get one playlist  - GET /media/playlists/1
 
 
 
 ## REST
 
-1. Data Exchange Format
-1.1 No Restriction. JSON is popular
-2. Transport
-2.1 Only HTTP
-3. Service Definition
-3.1 No Standard. WADL/Swagger/...
+* Data Exchange Format
+   * No Restriction. JSON is popular
+* Transport
+   * Only HTTP
+* Service Definition
+   * No Standard. WADL/Swagger/...
 
 
 
