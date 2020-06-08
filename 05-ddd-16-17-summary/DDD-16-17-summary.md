@@ -17,10 +17,10 @@ Large-scale structure evolve with the application, possibly changing to a comple
 
 
 ### SYSTEM METAPHOR
- 
+
 When a concrete analogy to the system emerges that captures the imagination of team members and seems to lead thinking in a useful direction, adopt it as a large-scale structure.
 
- 
+
 1. Firewall
 2. Dashboard
 3. Core
@@ -97,6 +97,7 @@ Strategic design is composed by 3 principles:
 
 Anemic domain model is nothing more but entities represented by classes containing only data and getter/setter methods. These classes lack of the business logic, which usually is placed in services, managers, utils, helpers etc.
 
+
 ![](img/user-anemic.png)
 
 
@@ -105,7 +106,7 @@ Anemic domain model is nothing more but entities represented by classes containi
 
 ### Anemic Domain Model vs. DDD
 
-![](img/anemic-vs-ddd.png)
+![](img/anemic-vs-ddd.jpg)
 
 
 Anemic domain model is possibly affected by the Data Driven Design or Procedure Oriented Programming.
