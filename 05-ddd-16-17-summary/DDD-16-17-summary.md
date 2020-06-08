@@ -32,7 +32,7 @@ When a concrete analogy to the system emerges that captures the imagination of t
 
 ### RESPONSIBILITY LAYERS
 
-Layers are partitions of a system in which members of each partition are aware of and are able to use the services of the layers “bellow”, but unaware and independent of the layers “above”.
+Layers are partitions of a system in which members of each partition are aware of and are able to use the services of the layers "bellow", but unaware and independent of the layers "above".
 
 
 ![application layer](img/application-layers.png)
