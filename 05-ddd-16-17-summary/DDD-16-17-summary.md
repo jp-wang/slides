@@ -8,7 +8,7 @@
 
 ## Large scale structure
 
-A pattern of rules or roles and relationships that will span the entire system and that allows some understanding of each part's place in the whole—even without detailed knowledge of the part's responsibility.
+A pattern of rules or roles and relationships that will span the entire system and that allows some understanding of each part's place in the whole even without detailed knowledge of the part's responsibility.
 
 
 ### Envolving order
@@ -37,6 +37,7 @@ Layers are partitions of a system in which members of each partition are aware o
 
 ![application layer](img/application-layers.png)
 
+
 * Strict Layered System
 * Relaxed Layered System
 
@@ -47,7 +48,7 @@ Layers are partitions of a system in which members of each partition are aware o
 
 Create a framework that allows an independent plugin can be plugged into system easily without changing any code in Central Hub.
 
-![](img/pluggable-component-framwork.png)
+![](img/pluggable-component-framework.png)
 
 
 1. This is a very difficult pattern to apply.
@@ -86,7 +87,7 @@ Strategic design is composed by 3 principles:
 
 
 
-## DDD is a Methodology.
+## DDD is a Methodology
 
 ![](img/ddd-overview.png)
 
@@ -94,11 +95,12 @@ Strategic design is composed by 3 principles:
 
 ## Anemic Domain Model
 
+Anemic domain model is nothing more but entities represented by classes containing only data and getter/setter methods. These classes lack of the business logic, which usually is placed in services, managers, utils, helpers etc.
 
 ![](img/user-anemic.png)
-![](img/user-service.png)
 
-Anemic domain model is nothing more but entities represented by classes containing only data and getter/setter methods. These classes lack of the business logic, which usually is placed in services, managers, utils, helpers etc.
+
+![](img/user-service.png)
 
 
 ### Anemic Domain Model vs. DDD
@@ -119,5 +121,7 @@ Anemic domain model is possibly affected by the Data Driven Design or Procedure 
 
 ### Refactor into DDD
 
-![](img/user-name.png)
+![](img/user-name.png) 
+
+
 ![](img/user-improved.png)
