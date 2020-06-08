@@ -14,12 +14,12 @@ A pattern of rules or roles and relationships that will span the entire system a
 ### Envolving order
 
 Large-scale structure evolve with the application, possibly changing to a completely different type of structure along the way. Don't overconstrain the detailed design and model decisions that must be made with detailed knowledge.
- 
- 
+
+
 ### SYSTEM METAPHOR
  
 When a concrete analogy to the system emerges that captures the imagination of team members and seems to lead thinking in a useful direction, adopt it as a large-scale structure.
- 
+
  
 1. Firewall
 2. Dashboard
@@ -27,7 +27,7 @@ When a concrete analogy to the system emerges that captures the imagination of t
 4. Message broker
 5. Circuit breaker
 6. ...
- 
+
 
 
 ### RESPONSIBILITY LAYERS
