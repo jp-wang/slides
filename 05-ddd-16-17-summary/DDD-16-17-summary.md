@@ -1,7 +1,7 @@
 ## Agenda
 
 1. DDD 16&17
-2. My personal summary
+2. Takeaways
 3. One typical anti-pattern of domain model design
 
 
