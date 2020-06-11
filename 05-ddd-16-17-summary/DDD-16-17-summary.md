@@ -58,7 +58,7 @@ Strategic design is composed by 3 principles:
 
 ## Anemic Domain Model
 
-Anemic domain model is nothing more but entities represented by classes containing only data and getter/setter methods. These classes lack of the business logic, which usually is placed in services, managers, utils, helpers etc.
+>Note: Anemic domain model is nothing more but entities represented by classes containing only data and getter/setter methods. These classes lack of the business logic, which usually is placed in services, managers, utils, helpers etc.
 
 
 ![](img/user-anemic.png)
