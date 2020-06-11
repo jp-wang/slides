@@ -18,12 +18,9 @@ Pluggable component framework|Independent plugin can be plugged into system
 Refactoring|Iterative development process
 
 
-![application layer](img/application-layers.png)
+![application layer](img/application-layers-2.png)
 
 > whatever layering we decide upon, it must be simple and should have a maximum of 4 or 5 layers.
-
-
-![](img/layers_example.png)
 
 
 
@@ -34,6 +31,9 @@ Strategic design is composed by 3 principles:
 1. Context (Context map, bounded context)
 2. Core Domain
 3. Large scale structure
+
+
+![](img/together.png)
 
 
 
